@@ -22,7 +22,16 @@
 
 <link rel="stylesheet" href="./styles.css">
 <link rel="stylesheet" href="https://use.typekit.net/xdu2mfp.css">
-<script src="./vibrate.js"></script>
+<script>
+  var canVibrate = 'vibrate' in navigator || 'mozVibrate' in navigator;
+
+if (canVibrate && !('vibrate' in navigator))
+    navigator.vibrate = navigator.mozVibrate;
+ 
+document.querySelector('.buzz').addEventListener('click', function() {
+    navigator.vibrate(50);  // 100ms vibration for button press feedback
+});
+</script>
 
 </head>
 
