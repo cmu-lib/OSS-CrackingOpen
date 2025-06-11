@@ -410,11 +410,11 @@ nav a::before {
 }
 
 
-.egg-menu button .menu-item {
+.egg-menu a.menu-item {
   background-color: var(--skibo-red);
 }
 
-.egg-menu button .menu-item:hover {
+.egg-menu a.menu-item:hover {
   background-color: var(--tint-red);
 }
 
