@@ -1,5 +1,8 @@
-var isMobile = /iPhone|iPod|iPad|Android|BlackBerry/.test(navigator.userAgent)
+var canVibrate = 'vibrate' in navigator || 'mozVibrate' in navigator;
+
+if (canVibrate && !('vibrate' in navigator))
+    navigator.vibrate = navigator.mozVibrate;
  
-$('.buzz, a').on(isMobile ? 'touchend' : 'click', function (e) {
-  navigator.vibrate(50)
-})
+$(".buzz").bind("click", function() {
+    navigator.vibrate([50, 500, 50]);
+});
