@@ -10,6 +10,7 @@
 /* || COLORS */
 
 html {
+  font-size: 100%;
   background-color: var(--background-color);
   color: var(--text-color);
   scroll-behavior: smooth;}
@@ -160,6 +161,12 @@ h4, h5, h6 {
 
 /* || ACCESSIBLE EXTRAS */
 
+:focus-visible {
+  outline: 2px dotted var(--link-accent);
+  outline-offset: .5rem;
+  background: var(--focus-back);
+}
+
 .visually-hidden:not(:focus):not(:active) {
   clip: rect(0 0 0 0); 
   clip-path: inset(50%);
@@ -168,6 +175,54 @@ h4, h5, h6 {
   position: absolute;
   white-space: nowrap; 
   width: 1px;}
+
+.skipnav:focus {
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  clip-path: initial;
+  white-space: normal;}
+
+.skipnav {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  top:1.5rem;
+  left:1.5rem;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px 1px 1px 1px);
+  /* maybe deprecated but we need to support legacy browsers */
+  clip: rect(1px, 1px, 1px, 1px);
+  /* modern browsers, clip-path works inwards from each corner */
+  clip-path: inset(50%);
+  /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+  white-space: nowrap;
+}
+
+.skipnav:focus {
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  clip-path: initial;
+  white-space: normal;
+}
+
+.skipnav:focus-visible {
+  outline: .5rem double var(--skibo-red);
+  outline-offset: .5rem;
+  background: var(--focus-back);
+  font-size: 1.5rem;
+}
 
 
 
@@ -233,13 +288,38 @@ a.nodeco::before {
 body {
   font-family: source-serif-pro, serif;
   font-weight: 400;
-  font-size: 100%;
   line-height: 1.5;
   margin:2rem;}
 
 section {
   margin: 2rem auto 0 auto;
   max-width: 1200px;}
+
+p {
+  text-wrap: pretty;
+    -webkit-hyphens: auto;
+    -webkit-hyphenate-limit-before: 3;
+    -webkit-hyphenate-limit-after: 3;
+    -webkit-hyphenate-limit-chars: 6 3 3;
+    -webkit-hyphenate-limit-lines: 2;
+    -webkit-hyphenate-limit-last: always;   
+    -webkit-hyphenate-limit-zone: 8%;
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 3;
+    hyphenate-limit-lines: 2;
+    hyphenate-limit-last: always;   
+    hyphenate-limit-zone: 8%;
+}
+
+button {
+  box-shadow: none;
+  border: 0;
+}
+
+button:focus-visible {
+  box-shadow: 
+  0 0 0 .25rem var(--text-color);  
+}
 
 footer {
   font-size: 80%;
@@ -303,10 +383,6 @@ nav a::before {
   text-decoration: none;
 }
 
-.egg-menu .floating-btn:hover {
-  color: var(--eggshell-dk);
-}
-
 .egg-menu .items-wrapper {
   padding: 0;
   margin: 0;
@@ -334,11 +410,11 @@ nav a::before {
 }
 
 
-.egg-menu a.menu-item {
+.egg-menu button .menu-item {
   background-color: var(--skibo-red);
 }
 
-.egg-menu a.menu-item:hover {
+.egg-menu button .menu-item:hover {
   background-color: var(--tint-red);
 }
 

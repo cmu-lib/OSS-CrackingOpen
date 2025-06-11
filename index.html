@@ -28,9 +28,13 @@
 <body>
 <main>
 
+<a href="#first" class="skipnav">
+skip to content &darr;
+</a>
+
 <header>
 
-<a href="#title" class="nodeco buzz">
+<a href="#title" class="nodeco">
 <svg role="img" id="CrackingOpenLogo" data-name="CrackingOpenLogo" aria-labelledby="CrackingOpenLogoText" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1158.2 1019.7">
 <title id="CrackingOpenLogoText">Logo for Cracking Open, Open Science Unconference, depicting an excited scotty dog popping out of an egg that has been cracked open</title>
   <circle id="background" class="color-skibored" cx="580" cy="516" r="475"/>
@@ -65,9 +69,9 @@ Carnegie Mellon University </h2>
 
 
 <nav id="eggMenu" class="egg-menu">
-  <a class="floating-btn" onclick="document.getElementById('eggMenu').classList.toggle('active');">
+  <button class="floating-btn" onclick="document.getElementById('eggMenu').classList.toggle('active');">
     MENU
-  </a>
+  </button>
   <menu class="items-wrapper">
     <div class="menu-item">home</div>
     <a href="./about.html" class="menu-item">about</a>
@@ -77,7 +81,7 @@ Carnegie Mellon University </h2>
 </nav>
 
 <section id="description" class="bigtext">
-<p>Join us for the inaugural Cracking Open Unconference at Carnegie Mellon University in Pittsburgh, Pennsylvania on <a href="./savethedate.ics" download>October 16, 2025</a>.</p>
+<p id="first">Join us for the inaugural Cracking Open Unconference at Carnegie Mellon University in Pittsburgh, Pennsylvania on <a href="./savethedate.ics" title="download ics file to save the date on your calendar" download>October 16, 2025</a>.</p>
 <p>The unconference is a full-day of participant driven conversations. This event will create a space for meaningful and timely discussion on open research topics chosen by the participants. This free event is open to library professionals, graduate students, and academic researchers at any institution. Registration link forthcoming.</p>
 <p>We welcome vendors to join us for the <a href="https://cmu-lib.github.io/OSS-2025/" target ="_blank">Open Science Symposium</a> on November 23, and consider sponsoring our open science programming this fall. Sponsors will be able to give a lightning talk at the Open Science Symposium or join us for the social hour of the Cracking Open Unconference. More information on sponsorship opportunities forthcoming.</p>
 <p>Please contact <a href="https://library.cmu.edu/about/people/melanie-gainey">Melanie Gainey</a> with any questions.</p>
