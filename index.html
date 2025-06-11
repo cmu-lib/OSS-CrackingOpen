@@ -30,16 +30,6 @@
 
 <header>
 
-  <script>
-  var canVibrate = 'vibrate' in navigator || 'mozVibrate' in navigator;
-
-if (canVibrate && !('vibrate' in navigator))
-    navigator.vibrate = navigator.mozVibrate;
- 
-document.querySelector('.buzz').addEventListener('click', function() {
-    navigator.vibrate(50);  // 100ms vibration for button press feedback
-});
-</script>
 <a href="#title" class="nodeco buzz">
 <svg role="img" id="CrackingOpenLogo" data-name="CrackingOpenLogo" aria-labelledby="CrackingOpenLogoText" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1158.2 1019.7">
 <title id="CrackingOpenLogoText">Logo for Cracking Open, Open Science Unconference, depicting an excited scotty dog popping out of an egg that has been cracked open</title>
