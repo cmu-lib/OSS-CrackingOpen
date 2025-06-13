@@ -54,6 +54,9 @@ a, a:link, a:visited {
   position: relative;
   color: var(--link-color);
   text-decoration: var(--link-accent) underline dotted 0.05rem;
+  -webkit-text-decoration-line: underline;
+  -webkit-text-decoration-style: dotted;
+  -webkit-text-decoration-color: var(--link-accent);
   text-underline-offset: 0.15rem;}
 
 a:focus, a:hover, a:active {
@@ -315,7 +318,8 @@ p {
 
 button {
   box-shadow: none;
-  border: 0;}
+  border: 0;
+  font-size:100%;}
 
 button:focus-visible {
   box-shadow: 
