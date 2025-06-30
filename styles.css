@@ -92,6 +92,10 @@ a:hover::before {
   color: var(--background-color);
   background: var(--text-color);}
 
+em {
+  text-shadow: 0 .0625rem var(--link-accent);
+}
+
 
 
 /* || TITLE/HEADERS */
@@ -127,7 +131,7 @@ h2 {
 h3 {
   font-family: open-sans, sans-serif;
   font-weight: 700;
-  margin: 4rem auto 0 auto;
+  margin: 4rem auto 1rem auto;
   max-width: 1200px;}
 
 h4, h5, h6 {
@@ -136,7 +140,10 @@ h4, h5, h6 {
   text-transform: uppercase;}
 
 .bigblock h4 {
-  margin: 1rem 0 1rem 0;}
+  margin: 0 0 1rem 0;}
+
+.bigtext h3 {
+  text-align: center;}
 
 .cracking {
   transition: 0.70s;
@@ -294,7 +301,7 @@ body {
   font-family: source-serif-pro, serif;
   font-weight: 400;
   line-height: 1.5;
-  margin:2rem;
+  margin: 2rem;
   counter-reset: session-count;}
 
 section {
@@ -327,13 +334,21 @@ button:focus-visible {
 
 footer {
   font-size: 80%;
-  margin-top:2em;}
+  font-weight: 400;
+  margin-top:4rem;}
 
 .bigtext p {
   width: 80%;
   font-size: 125%;
   line-height: 1.5; 
   margin: 0 auto 1rem auto}
+
+.bigtext p.little {
+  font-size: 100%;
+  font-style: italic;}
+
+p.extragap {
+  padding-top:2rem;}
 
 .bigblock p {
   column-count: 1;
