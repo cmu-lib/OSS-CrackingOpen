@@ -35,7 +35,8 @@ html {
         
   --scots-rose:#EF3A47;
   --gold-thread:#FDB515;
-  --green-thread:#009647;}
+  --green-thread:#009647;
+  --teal-thread:#008F91;}
 
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
@@ -44,7 +45,7 @@ html {
     --text-color: #fbf2dd;
     --link-color: #c4beb1;
     --link-accent: #9CDFFF;
-    --focus-back: black;}} 
+    --focus-back: black;}}
 
 
 
@@ -556,24 +557,40 @@ nav a::before {
 /* ||| PROGRAM */
 
 
-.track-slot {
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 24;
+  cursor: default;
+}
+
+.material-symbols-outlined:focus, .material-symbols-outlined:hover, .material-symbols-outlined:active {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 24}
+
+.time-skip {
         display: none;}
 
 .session {
         margin-bottom:  1rem;
+        line-height: 1rem;
         color: var(--scotty)}
 
 @supports( display:grid ) {
         @media (700px <= width) {
                 .schedule {
                         display: grid;}
-                .track-slot {
-                        display: block;
-                        padding: 0 1rem .5rem;
-                        font-family: open-sans, sans-serif;
-                          font-weight: 400;}
+                .time-skip {
+                        display: inherit;}
                 .session {
                         margin: 0;}
+                .time-slot:not(.time-hour) {
+                        font-size: 0.75rem;}
         }
 }
 
@@ -581,15 +598,41 @@ nav a::before {
         grid-gap: 1em;
         grid-template-rows:
                 [tracks] auto
-                [time-0800] 1fr
                 [time-0830] 1fr
+                [time-0845] 1fr
                 [time-0900] 1fr
+                [time-0915] 1fr
                 [time-0930] 1fr
+                [time-0945] 1fr
                 [time-1000] 1fr
+                [time-1015] 1fr
                 [time-1030] 1fr
+                [time-1045] 1fr
                 [time-1100] 1fr
+                [time-1115] 1fr
                 [time-1130] 1fr
+                [time-1145] 1fr
                 [time-1200] 1fr
+                [time-1215] 1fr
+                [time-1230] 1fr
+                [time-1245] 1fr
+                [time-1300] 1fr
+                [time-1315] 1fr
+                [time-1330] 1fr
+                [time-1345] 1fr
+                [time-1400] 1fr
+                [time-1415] 1fr
+                [time-1430] 1fr
+                [time-1445] 1fr
+                [time-1500] 1fr
+                [time-1515] 1fr
+                [time-1530] 1fr
+                [time-1545] 1fr
+                [time-1600] 1fr
+                [time-1615] 1fr
+                [time-1630] 1fr
+                [time-1645] 1fr
+                [time-1700] 1fr
          /* gridlines "named" in 24hr time */
         ;
         grid-template-columns:
@@ -598,31 +641,58 @@ nav a::before {
                 [track-1-end track-2-start] 1fr
                 [track-2-end track-3-start] 1fr
                 [track-3-end track-4-start] 1fr
-                [track-4-end]
+                [track-4-end track-5-start] 1fr
+                [track-5-end]
         ;}
 
 .session {
-        padding: 1rem;
+        padding: .5rem;
         border-radius: 1rem;}
 
-.title, .time-slot {
-        margin: 0; }
+.session.session-bleed-bottom {
+        border-radius: 1rem 1rem 0 0;
+        border-bottom-style: none;}
 
-.title::before {
-        counter-increment: session-count;
-        content: 'Session #' counter(session-count) ': '; }
+.session.session-bleed-top {
+        border-radius: 0 0 1rem 1rem;
+        border-top-style: none;}
+
+.session-title {
+        margin: 0; 
+        padding-bottom: .25rem;}
+
+h4.time-slot {
+        margin: 0; 
+        text-transform: none;}
+
+.session-description, .session-location, .session-time {
+        font-size: 0.75rem;}
 
 .track-1 {
-        background-color: var(--scots-rose);}
+        background-color: var(--eggshell-dk);
+        border: .5rem solid var(--scots-rose);}
 .track-2 {
-        background-color: var(--gold-thread);}
+        background-color: var(--eggshell-dk);
+        border: .5rem solid var(--gold-thread);}
 .track-3 {
-        background-color: var(--mid-blue);}
+        background-color: var(--eggshell-dk);
+        border: .5rem solid var(--green-thread);}
 .track-4 {
-        background-color: var(--green-thread);}
+        background-color: var(--eggshell-dk);
+        border: .5rem solid var(--teal-thread);}
+.track-5 {
+        background-color: var(--eggshell-dk);
+        border: .5rem solid var(--mid-blue);}
 .track-many {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: var(--eggshell-dk);}
+        text-align:center;
+        background: var(--eggshell-dk);;
+        border: .5rem solid purple;}
+.track-break {
+        text-align:center;
+        background-color: var(--eggshell-dk);
+        opacity: 1;
+        background-size: 4px 4px;
+        background-image: repeating-linear-gradient(45deg, var(--background-color) 0, #c4beb1 2px, var(--eggshell-dk) 0, var(--eggshell-dk) 50%);
+        color: var(--text-color);
+}
 
