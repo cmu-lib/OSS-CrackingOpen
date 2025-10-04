@@ -520,6 +520,36 @@ nav a::before {
 
 
 
+/* ||| SPONSORS */
+
+.sponsorgrid, .sponsor-light, .sponsor-dark {
+  width: 80%;
+  margin: 0 auto 1rem auto;
+  flex-flow: row wrap;}
+
+      @media (width < 750px) {
+            .sponsor {
+              padding-bottom:1em;
+              width: 100%;
+              height: auto;}
+      }
+      @media (750px <= width) {
+            .sponsor {
+              padding:1em;
+              width: calc(50% - 1em);
+              height: auto;}
+      }
+
+.sponsor-light {display:none}
+.sponsor-dark {display:block}
+  
+      @media (prefers-color-scheme: dark) {
+.sponsor-light {display:block}
+.sponsor-dark {display:none}      
+}
+
+
+
 /* ||| PEOPLE DEETS */
 
 .person {
