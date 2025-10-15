@@ -348,6 +348,10 @@ footer {
   font-size: 100%;
   font-style: italic;}
 
+p.little {
+  font-size: 100%;
+  font-style: italic;}
+
 p.extragap {
   padding-top:2rem;}
 
@@ -674,6 +678,21 @@ nav a::before {
                 [track-4-end track-5-start] 1fr
                 [track-5-end]
         ;}
+
+.schedule a, .schedule a:link, .schedule a:visited {
+  color: var(--scotty);
+  text-decoration: none;
+  background-color: var(--eggshell);
+  border-radius: 4px;}
+
+.schedule a:hover {
+  background-color: transparent}
+
+.schedule a::before {
+  background-color: transparent}
+
+.schedule a:hover::before {
+  transform: none}
 
 .session {
         padding: .5rem;
